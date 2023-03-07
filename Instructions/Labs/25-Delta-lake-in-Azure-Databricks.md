@@ -77,8 +77,8 @@ Azure Databricks は、Apache Spark "クラスター" を使用して複数の�
 多くの Spark 環境と同様に、Databricks では、ノートブックを使用して、データの探索に使用できるノートと対話型のコード セルを組み合わせることができます。
 
 1. 左側にあるタスク バーを展開し、 **[ワークスペース]** タブを選択します。次に、 **[ユーザー]** フォルダーを選択し、 **&#8962; <ユーザー名>** フォルダーに対して **&#9662;** メニューの **[インポート]** を選択します。**
-2. **[ノートブックのインポート]** ダイアログ ボックスで、 **[URL]** を選択し、`https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/25/Delta-Lake.dbc` からノートブックをインポートします。
-3. **[&#8962; ホーム]** を選択し、インポートした **[Delta Lake の探索]** ノートブックを開きます。
+2. **[ノートブックのインポート]** ダイアログ ボックスで、 **[URL]** を選択し、`https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/raw/master/Allfiles/labs/25/Delta-Lake.ipynb` からノートブックをインポートします。
+3. **[&#8962; ホーム]** を選択し、インポートした **[Delta Lake]** ノートブックを開きます。
 4. ノートブックが **"ユーザー名の" クラスター**にアタッチされていることを確認し、含まれている指示に従います。含まれるセルを実行して、Delta Lake を操作します。**
 
 ## Azure Databricks リソースを削除する
