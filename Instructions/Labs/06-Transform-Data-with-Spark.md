@@ -64,8 +64,12 @@ lab:
 8. **data** フォルダーを開き、3 年間の売上データの .csv ファイルが含まれていることを確認します。
 9. いずれかのファイルを右クリックし、 **[プレビュー]** を選択して、そこに含まれているデータを表示します。 このファイルにはヘッダー行が含まれているため、列ヘッダーを表示するには、オプションを選択できることに注意してください。
 10. プレビューを閉じます。 次に、 **[開発]** ページで **[ノートブック]** を展開し、提供されている **Spark Transform** ノートブックを選びます。
-11. ノートブックを **spark*xxxxxxx*** Spark プールにアタッチします。
-12. ノートブックの注意事項を確認して、コード セルを実行します。
+
+10. プレビューを閉じます。 次に、 以下のリンクから **Spark Transform.ipynb** をダウンロードします。[https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/06/notebooks/Spark%20Transform.ipynb](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/06/notebooks/Spark%20Transform.ipynb)
+
+11. 次に、 **[開発]** ページで **[+]** を展開し、ダウンロードしたipynbファイルをインポートします。
+12. ノートブックを **spark*xxxxxxx*** Spark プールにアタッチします。
+13. ノートブックの注意事項を確認して、コード セルを実行します。
 
     > **注**: Spark プールを開始する必要があるため、最初のコード セルの実行には数分かかります。 後続のセルは、もっと速く実行されます。
 
