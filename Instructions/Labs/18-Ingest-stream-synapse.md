@@ -208,7 +208,7 @@ Azure Stream Analytics には、ストリーミング ソースからのデー�
     - **Select Blob storage/ADLS Gen2 from your subscriptions from your subscriptions (サブスクリプションから BLOB ストレージ/ADLS Gen2 を選択する)** : オン
     - **サブスクリプション**:お使いの Azure サブスクリプション
     - **ストレージ アカウント**: **datalake*xxxxxxx*** ストレージ アカウントを選びます
-    - **コンテナー**: 既存の**ファイル** コンテナーを選びます
+    - **コンテナー**: 既存の**files** コンテナーを選びます
     - **認証モード**: 接続文字列
     - **イベント シリアル化形式**: CSV - コンマ (,)
     - **[エンコード]**: UTF-8
@@ -252,8 +252,8 @@ Azure Stream Analytics には、ストリーミング ソースからのデー�
     node ~/dp-203/Allfiles/labs/18/orderclient
     ```
 
-4.  注文アプリが完了したら、[Cloud Shell] ペインを最小化します。 次に Synapse Studio ブラウザー タブに切り替え、 **[データ]** ページの **[リンク済み]** タブで **Azure Data Lake Storage Gen2** > **synapse*xxxxxx* (primary - datalake*xxxxx *)* * を展開して **[ファイル (プライマリ)]** コンテナーを選びます。
-5. **ファイル** コンテナーが空の場合は、1 分ほど待ってから **[&#8635; 更新]** を使って表示を更新します。 最終的に、現在の年の名前が付いたフォルダーが表示されます。 これには、月と日のフォルダーが含まれています。
+4.  注文アプリが完了したら、[Cloud Shell] ペインを最小化します。 次に Synapse Studio ブラウザー タブに切り替え、 **[データ]** ページの **[リンク済み]** タブで **Azure Data Lake Storage Gen2** > **synapse*xxxxxx* (primary - datalake*xxxxx *)* * を展開して **[files (Primary)]** コンテナーを選びます。
+5. **files** コンテナーが空の場合は、1 分ほど待ってから **[&#8635; 更新]** を使って表示を更新します。 最終的に、現在の年の名前が付いたフォルダーが表示されます。 これには、月と日のフォルダーが含まれています。
 6. 年のフォルダーを選び、 **[New SQL script] (新しい SQL スクリプト)** メニューで **[Select TOP 100 rows] (上位 100 行を選択する)** を選びます。 次に **[ファイルの種類]** を **[テキスト形式]** に設定し、設定を適用します。
 7. 開いたクエリ ペインでクエリを変更し、次のように `HEADER_ROW = TRUE` パラメーターを追加します。
 
