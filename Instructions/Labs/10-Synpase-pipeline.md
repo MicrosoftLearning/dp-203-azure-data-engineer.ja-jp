@@ -199,7 +199,7 @@ lab:
     - ProductID: ProductAltKey
     - ProductsText@ProductName: ProductName
     - ProductsText@Color: Color
-    - ProductsText@Size: サイズ
+    - ProductsText@Size: Size
     - ProductsText@ListPrice: ListPrice
     - ProductsText@Discontinued: Discontinued
 5. データ フローが次のようになっていることを確認します。
