@@ -130,8 +130,8 @@ lab:
             - **[アカウントの選択方法]** : Azure サブスクリプションから
             - **[Azure サブスクリプション]** : Azure サブスクリプションを選択します
             - **[サーバー名]** : synapse*xxxxxxx* (Synapse ワークスペース)
-            - **[データベース名]** : synapse*xxxxxxx*
-            - **[SQL プール]** : synapse**
+            - **[データベース名]** : sqlxxxxxxx
+            - **[SQL プール]** : sqlxxxxxxx
              **[認証の種類]** : システム割り当てマネージド ID
         - **[テーブル名]** : dbo.DimProduct
         - **スキーマのインポート**:接続/ストアから
