@@ -109,12 +109,6 @@ Microsoft Purview は、データ ガバナンス、情報保護、リスク管�
 
 ## Microsoft Purview で Azure Synapse Analytics データ資産をカタログ化する
 
-Microsoft Purview を使用すると、Azure Synapse ワークスペースのデータ ソースを含む、データ資産全体のデータ資産をカタログ化できます。デプロイしたばかりのワークスペースには、データ レイク (Azure Data Lake Storage Gen2 アカウント内)、サーバーレス データベース、専用 SQL プール内のデータ ウェアハウスが含まれています。
-
-
-
-## Microsoft Purview で Azure Synapse Analytics データ資産をカタログ化する
-
 Microsoft Purview を使用すると、Azure Synapse ワークスペース内のデータ ソースを含め、データ エステート全体でデータ資産をカタログ化できます。 スクリプトを使用してデプロイしたワークスペースには、データ レイク (Azure Data Lake Storage Gen2 アカウント内)、サーバーレス データベース、専用 SQL プール内のデータ ウェアハウスが含まれます。
 
 ### Microsoft Purview 向けにロールベースのアクセスを構成する
