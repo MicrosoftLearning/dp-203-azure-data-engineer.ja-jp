@@ -130,8 +130,8 @@ lab:
             - **[アカウントの選択方法]** : Azure サブスクリプションから
             - **[Azure サブスクリプション]** : Azure サブスクリプションを選択します
             - **[サーバー名]** : synapse*xxxxxxx* (Synapse ワークスペース)
-            - **[データベース名]** : synapse*xxxxxxx*
-            - **[SQL プール]** : synapse**
+            - **[データベース名]** : sqlxxxxxxx
+            - **[SQL プール]** : sqlxxxxxxx
              **[認証の種類]** : システム割り当てマネージド ID
         - **[テーブル名]** : dbo.DimProduct
         - **スキーマのインポート**:接続/ストアから
@@ -174,7 +174,7 @@ lab:
     - **[説明]** : 新規挿入、既存のアップサート
     - **[受信ストリーム]** : MatchedProducts
     - **[行の変更条件]** : 既存の条件を編集し、 **+** ボタンを使用して次のように 2 つ目の条件を追加します (式では "大文字と小文字が区別される" ことに注意してください)。**
-        - Ins次の場合に挿入(InsertIf): `isNull(ProductKey)`
+        - 次の場合に挿入(InsertIf): `isNull(ProductKey)`
         - 次の場合にアップサートする(UpsertIf): `not(isNull(ProductKey))`
 3. データ フローが次のようになっていることを確認します。
 
@@ -199,7 +199,7 @@ lab:
     - ProductID: ProductAltKey
     - ProductsText@ProductName: ProductName
     - ProductsText@Color: Color
-    - ProductsText@Size: サイズ
+    - ProductsText@Size: Size
     - ProductsText@ListPrice: ListPrice
     - ProductsText@Discontinued: Discontinued
 5. データ フローが次のようになっていることを確認します。
