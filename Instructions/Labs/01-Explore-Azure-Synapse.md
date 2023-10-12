@@ -6,7 +6,7 @@ lab:
 
 # Azure Synapse Analytics の詳細
 
-Azure Synapse Analytics は、エンドツーエンドのデータ分析用の単一の統合データ分析プラットフォームを提供するものです。 この演習では、データを取り込んで探索するさまざまな方法について調べます。 この演習は、Azure Synapse Analytics のさまざまなコア機能の概要として設計されています。他の演習で特定の機能を詳しく調べることができます。
+Azure Synapse Analytics は、エンドツーエンドのデータ分析用の単一の統合データ分析プラットフォームを提供するものです。 この演習では、データを取り込んで探索するさまざまな方法について調べます。 この演習は、Azure Synapse Analytics のさまざまなコア機能の概要として設計されています。 その他の演習では、特定の機能について詳しく調べることができます。
 
 この演習の所要時間は約 **60** 分です。
 
@@ -36,7 +36,7 @@ Azure Synapse Analytics "ワークスペース"は、データとデータ処理
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-5. リポジトリがクローンされたら、次のコマンドを入力してこの演習用のフォルダーに移動し、そこに含まれている **setup.ps1** スクリプトを実行します。
+5. リポジトリが複製されたら、次のコマンドを入力してこの演習用のフォルダーに変更し、そこに含まれている **setup.ps1** スクリプトを実行します。
 
     ```
     cd dp-203/Allfiles/labs/01
@@ -73,8 +73,8 @@ Azure Synapse Analytics "ワークスペース"は、データとデータ処理
         - **sql*xxxxxxx***: リレーショナル データ ウェアハウス データベースをホストする "専用" SQL プール。**
     - **Apache Spark プール**:
         - **spark*xxxxxxx***: Scala や Python などのプログラミング言語を使用して、データ レイク内のデータをオンデマンドで探索または処理できます。
-    - **Data Explorer プール**:
-        - **adx*xxxxxxx***: Kusto 照会言語 (KQL) を使用したデータ分析に使用できる Data Explorer プール。
+<!---    - **Data Explorer pools**:
+        - **adx*xxxxxxx***: A Data Explorer pool that you can use to analyze data by using Kusto Query Language (KQL). --->
 
 ## パイプラインを使用してデータを取り込む
 
@@ -86,7 +86,7 @@ Azure Synapse Analytics を使用して実行できる主なタスクの 1 つ�
 2. データ コピー ツールの **[プロパティ]** ステップで、**[組み込みコピー タスク]** と **[1 回実行する]** が選択されていることを確認し、**[次へ >]** をクリックします。
 3. **[ソース]** ステップの **[データセット]** サブステップで、次の設定を選択します。
     - **[ソースの種類]**: すべて
-    - **[接続]**: 新しい接続を作成し、表示される **[リンクされたサービス]** ペインの **[ファイル]** タブで **[HTTP]** を選びます。続けて、次の設定を使ってデータ ファイルへの接続を作成します。**
+    - **接続**: "新しい接続を作成し、表示される **[リンク サービス]** ペインの **[汎用プロトコル]** タブで、 **[HTTP]** を選びます。続けて、次の設定を使ってデータ ファイルへの接続を作成します。"**
         - **名前**: 製品
         - **説明**: HTTP 経由の製品一覧
         - **統合ランタイム経由で接続する**: AutoResolveIntegrationRuntime
@@ -137,7 +137,7 @@ Azure Synapse Analytics を使用して実行できる主なタスクの 1 つ�
 
 ### 取り込んだデータを表示する
 
-1. **[データ]** ページで、 **[リンク済み]** タブを選択し、Synapse ワークスペースの **files** ファイル ストレージが表示されるまで **[製品ファイル]** 階層を展開します。 次に示すように、ファイル ストレージを選択して、**products.csv** という名前のファイルを含む **product_data** という名前のフォルダーが、この場所にコピーされていることを確認します。
+1. **[データ]** ページで、 **[リンク済み]** タブを選択し、Synapse ワークスペースの **files** ファイル ストレージが表示されるまで、**synapse*xxxxxxx* (Primary) datalake** コンテナー階層を展開します。 次に示すように、ファイル ストレージを選択して、**products.csv** という名前のファイルを含む **product_data** という名前のフォルダーが、この場所にコピーされていることを確認します。
 
     ![Synapse ワークスペースのファイル ストレージで Azure Data Lake Storage 階層が展開された Synapse Studio を示す画像](./images/product_files.png)
 
@@ -341,49 +341,68 @@ SQL は構造化データセットでクエリを実行するための共通言�
 
 10. **[管理]** ページで、**sql*xxxxxxx*** 専用 SQL プールの行を選択し、&#10074;&#10074; アイコンを使用して一時停止します。
 
-## Data Explorer プールを使用してデータを探索する
+<!--- ## Explore data with a Data Explorer pool
 
-Azure Synapse Data Explorer には、Kusto 照会言語 (KQL) を使ってデータの保存とクエリを行うために使用できるランタイムが用意されています。 Kusto は、ログ ファイルや IoT デバイスからのリアルタイム データなどの時系列コンポーネントを含むデータ向けに最適化されています。
+Azure Synapse Data Explorer provides a runtime that you can use to store and query data by using Kusto Query Language (KQL). Kusto is optimized for data that includes a time series component, such as realtime data from log files or IoT devices.
 
-### Data Explorer データベースを作成してテーブルにデータを取り込む
+### Create a Data Explorer database and ingest data into a table
 
-1. Synapse Studio の **[管理]** ページの **[Data Explorer プール]** セクションで、**adx*xxxxxxx*** プールの行を選択し、 **&#9655;** アイコンを使用して再開します。
-2. プールが開始されるまで待ちます。 これは時間がかかることがあります。 **&#8635; [更新]** ボタンを使用して、その状態を定期的に確認してください。 準備ができると、状態が **[オンライン]** と表示されます。
-3. Data Explorer プールが開始されたら、 **[データ]** ページを表示し、 **[ワークスペース]** タブで **[Data Explorer データベース]** を展開し、**adx*xxxxxxx*** が一覧に表示されていることを確認します (必要に応じて、ページの左上にある **&#8635;** アイコンを使用して表示を更新します)
-4. **[データ]** ペインで、 **&#65291;** アイコンを使用して、**sales-data** という名前の新しい **Data Explorer データベース**を **adx*xxxxxxx*** プールに作成します。
-5. Synapse Studio で、データベースが作成されるまで待ちます (通知が表示されます)。
-6. **[開発]** ページに切り替え、 **[KQL スクリプト]** の一覧で **ingest-data** を選択します。 スクリプトが開いたら、2 つのステートメントが含まれていることに注目します。
-    - **sales** という名前のテーブルを作成する `.create table` ステートメント。
-    - HTTP ソースからテーブルにデータを読み込む `.ingest into table` ステートメント。
-7. **[ingest-data]** ペインの **[接続先]** の一覧で **adx*xxxxxxx*** プールを選択し、 **[データベース]** の一覧で **sales-data** を選択します。
-8. スクリプトの `.create table` ステートメントを強調表示し、ツール バーの **[&#9655; 実行]** ボタンを使用して選択したコードを実行し、**sales** という名前のテーブルを作成します。
-9. テーブルが作成されたら、`.ingest into table` ステートメントを強調表示し、 **[&#9655; 実行]** ボタンを使用して実行し、テーブルにデータを取り込みます。
+1. In Synapse Studio, on the **Manage** page, in the **Data Explorer pools** section, select the **adx*xxxxxxx*** pool row and then use its **&#9655;** icon to resume it.
+2. Wait for the pool to start. It can take some time. Use the **&#8635; Refresh** button to check its status periodically. The status will show as **online** when it is ready.
+3. When the Data Explorer pool has started, view the **Data** page; and on the **Workspace** tab, expand **Data Explorer Databases** and verify that **adx*xxxxxxx*** is listed (use **&#8635;** icon at the top-left of the page to refresh the view if necessary)
+4. In the **Data** pane, use the **&#65291;** icon to create a new **Data Explorer database** in the **adx*xxxxxxx*** pool with the name **sales-data**.
+5. In Synapse Studio, wait for the database to be created (a notification will be displayed).
+6. Switch to the **Develop** page, and in the **+** menu, add a KQL script. Then, when the script pane opens, in the **Connect to** list, select your **adx*xxxxxxx*** pool, and in the **Database** list, select **sales-data**.
+7. In the new script, add the following code:
 
-> **注**: この例では、ごく少量のバッチ データをファイルからインポートしました。この演習の目的のためにはそれで十分です。 実際には、Data Explorer を使用してもっと大量のデータ (Azure Event Hubs のようなストリーミング ソースからのデータなど) を分析できます。
+    ```kusto
+    .create table sales (
+        SalesOrderNumber: string,
+        SalesOrderLineItem: int,
+        OrderDate: datetime,
+        CustomerName: string,
+        EmailAddress: string,
+        Item: string,
+        Quantity: int,
+        UnitPrice: real,
+        TaxAmount: real)
+    ```
 
-### Kusto 照会言語を使用してテーブルにクエリを実行する
+8. On the toolbar, use the **&#9655; Run** button to run the selected code, which creates a table named **sales** in the **sales-data** database you created previously.
+9. After the code has run successfully, replace it with the following code, which loads data into the table:
 
-1. **[データ]** ページに戻り、**sales-data** データベースの **[...]** メニューで **[最新の情報に更新]** を選択します。
-2. **sales-data** データベースの **Tables** フォルダーを展開します。 次に、**sales** テーブルの **[...]** メニューで、 **[新しい KQL スクリプト]**  >  **[1000 行を取得]** を選択します。
-3. 生成されたクエリとその結果を確認します。 クエリには、次のコードが含まれている必要があります。
+    ```kusto
+    .ingest into table sales 'https://raw.githubusercontent.com/microsoftlearning/dp-203-azure-data-engineer/master/Allfiles/labs/01/files/sales.csv' 
+    with (ignoreFirstRecord = true)
+    ```
+
+10. Run the new code to ingest the data.
+
+> **Note**: In this example, you imported a very small amount of batch data from a file, which is fine for the purposes of this exercise. In reality, you can use Data Explorer to analyze much larger volumes of data; including realtime data from a streaming source such as Azure Event Hubs.
+
+### Use Kusto query language to query the table
+
+1. Switch back to the **Data** page and in the **...** menu for the **sales-data** database, select **Refresh**.
+2. Expand the **sales-data** database's **Tables** folder. Then in the **...** menu for the **sales** table, select **New KQL script** > **Take 1000 rows**.
+3. Review the generated query and its results. The query should contain the following code:
 
     ```kusto
     sales
     | take 1000
     ```
 
-    クエリの結果には、最初の 1000 行のデータが含まれます。
+    The results of the query contain the first 1000 rows of data.
 
-4. 次のように、クエリを変更します。
+4. Modify the query as follows:
 
     ```kusto
     sales
     | where Item == 'Road-250 Black, 48'
     ```
 
-5. **[&#9655; 実行]** ボタンを使用して、クエリを実行します。 その後、結果を確認します。これには、*Road-250 Black, 48* 製品の販売注文の行のみが含まれています。
+5. Use the **&#9655; Run** button to run the query. Then review the results, which should contain only the rows for sales orders for the *Road-250 Black, 48* product.
 
-6. 次のように、クエリを変更します。
+6. Modify the query as follows:
 
     ```kusto
     sales
@@ -391,9 +410,9 @@ Azure Synapse Data Explorer には、Kusto 照会言語 (KQL) を使ってデー
     | where datetime_part('year', OrderDate) > 2020
     ```
 
-7. クエリを実行し、結果を確認します。これには、2020 年より後に行われた *Road-250 Black, 48* の販売注文のみが含まれています。
+7. Run the query and review the results, which should contain only sales orders for *Road-250 Black, 48* made after 2020.
 
-8. 次のように、クエリを変更します。
+8. Modify the query as follows:
 
     ```kusto
     sales
@@ -402,13 +421,13 @@ Azure Synapse Data Explorer には、Kusto 照会言語 (KQL) を使ってデー
     | sort by Item asc
     ```
 
-9. クエリを実行し、結果を確認します。これには、2020 年 1 月 1 日から 12 月 31 日までの各製品の合計純収益が製品名の昇順で含まれています。
+9. Run the query and review the results, which should contain the total net revenue for each product between January 1st and December 31st 2020 in ascending order of product name.
 
-10. **[プロパティ]** ページがまだ表示されていない場合は、ツール バーの右端にある **[プロパティ]** ボタン ( **&#128463;<sub>*</sub>** のような外観) を選択して表示します。 次に、 **[プロパティ]** ペインで、クエリ名を「**売上データの探索**」に変更し、ツール バーの **[発行]** ボタンを使用して保存します。
+10. If it is not already visible, show the **Properties** page by selecting the **Properties** button (which looks similar to **&#128463;<sub>*</sub>**) on the right end of the toolbar. Then in the **Properties** pane, change the query name to **Explore sales data** and use the **Publish** button on the toolbar to save it.
 
-11. クエリ ペインを閉じ、 **[開発]** ページを表示して、KQL スクリプトが保存されていることを確認します。
+11. Close the query pane, and then view the **Develop** page to verify that the KQL script has been saved.
 
-12. **[管理]** ページで、Data Explorer プール行 **adx*xxxxxxx*** を選択し、&#10074;&#10074; アイコンを使用して一時停止します。
+12. On the **Manage** page, select the **adx*xxxxxxx*** Data Explorer pool row and use its &#10074;&#10074; icon to pause it. --->
 
 ## Azure リソースを削除する
 
@@ -418,6 +437,6 @@ Azure Synapse Analytics の探索が終了したので、不要な Azure コス�
 2. Azure portal の **[ホーム]** ページで、**[リソース グループ]** を選択します。
 3. Synapse Analytics ワークスペースの **dp203-*xxxxxxx*** リソース グループ (管理対象リソース グループでななく) を選択し、そこに Synapse ワークスペース、ストレージ アカウント、ワークスペースの SQL プール、Data Explorer プール、Spark プールが含まれていることを確認します。
 4. リソース グループの **[概要]** ページの上部で、**[リソース グループの削除]** を選択します。
-5. リソース グループ名「**dp203-xxxxxxx**」を入力してそれを削除することを確認し、 **[削除]** を選びます。
+5. リソース グループ名として「**dp203-*xxxxxxx***」と入力し、これが削除対象であることを確認したら、 **[削除]** を選択します。
 
     数分後に、Azure Synapse ワークスペース リソース グループと、それに関連付けられているマネージド ワークスペース リソース グループが削除されます。
