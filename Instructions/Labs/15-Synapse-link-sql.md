@@ -34,7 +34,7 @@ Azure Synapse Link for SQL を使用すると、SQL Server または Azure SQL D
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-5. リポジトリがクローンされたら、次のコマンドを入力してこの演習用のフォルダーに移動し、そこに含まれている **setup.ps1** スクリプトを実行します。
+5. リポジトリが複製されたら、次のコマンドを入力してこの演習用のフォルダーに変更し、そこに含まれている **setup.ps1** スクリプトを実行します。
 
     ```
     cd dp-203/Allfiles/labs/15
@@ -56,7 +56,7 @@ Azure SQL Database 用に Azure Synapse Link を設定する前に、Azure SQL D
 
     > **注**: Azure SQL サーバー リソース **sqldb*xxxxxxxx***) と Azure Synapse Analytics 専用 SQL プール (** sql*xxxxxxxx***) を混同しないように注意してください。
 
-2. Azure SQL Database リソースのページで、左側のペインの **[セキュリティ]** セクション (下部付近) にある **[ID]** を選択します。 次に、 **[システム割り当てマネージド ID]** で、 **[状態]** オプションを **[オン]** に設定します。 次に、 **[&#128427; 保存]** アイコンを使用して構成の変更を保存します。
+2. Azure SQL Server リソースのページで、左側のペインの **[セキュリティ]** セクション (下部付近) にある **[ID]** を選びます。 次に、 **[システム割り当てマネージド ID]** で、 **[状態]** オプションを **[オン]** に設定します。 次に、 **[&#128427; 保存]** アイコンを使用して構成の変更を保存します。
 
     ![Azure portal の [Azure SQL サーバー ID] ページのスクリーンショット。](./images/sqldb-identity.png)
 
