@@ -38,7 +38,7 @@ Data Lake Storage にアクセスできる Azure Synapse Analytics ワークス�
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-5. リポジトリが複製されたら、次のコマンドを入力してこの演習用のフォルダーに変更し、そこに含まれている **setup.ps1** スクリプトを実行します。
+5. リポジトリがクローンされたら、次のコマンドを入力してこの演習用のフォルダーに移動し、そこに含まれている **setup.ps1** スクリプトを実行します。
 
     ```
     cd dp-203/Allfiles/labs/03
@@ -89,7 +89,7 @@ Data Lake Storage にアクセスできる Azure Synapse Analytics ワークス�
 
     このコードでは、OPENROWSET を使用して、sales フォルダー内の CSV ファイルからデータを読み取り、最初の 100 行のデータを取得します。
 
-5. この場合、データ ファイルには最初の行に列名が含まれます。次に示すように、`HEADER_ROW = TRUE` パラメーターを `WITH` 句に追加するようにクエリを変更します (前のパラメーターの後にコンマを追加することを忘れないでください)。
+5. この場合、データ ファイルには最初の行に列名が含まれます。次に示すように、`HEADER_ROW = TRUE` パラメーターを `OPENROWSET` 句に追加するようにクエリを変更します (前のパラメーターの後にコンマを追加することを忘れないでください)。
 
     ```SQL
     SELECT
