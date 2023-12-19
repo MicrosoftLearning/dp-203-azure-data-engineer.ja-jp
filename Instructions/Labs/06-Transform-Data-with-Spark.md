@@ -38,7 +38,7 @@ lab:
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-5. リポジトリが複製されたら、次のコマンドを入力してこの演習用のフォルダーに変更し、そこに含まれている **setup.ps1** スクリプトを実行します。
+5. リポジトリがクローンされたら、次のコマンドを入力してこの演習用のフォルダーに移動し、そこに含まれている **setup.ps1** スクリプトを実行します。
 
     ```
     cd dp-203/Allfiles/labs/06
@@ -55,7 +55,7 @@ lab:
 ## Spark ノートブックを使用してデータを変換する
 
 1. デプロイ スクリプトが完了したら、Azure portal で、作成された **dp203-*xxxxxxx*** リソース グループに移動し、このリソース グループに Synapse ワークスペース、データ レイク用のストレージ アカウント、Apache Spark プールが含まれていることを確認します。
-2. Synapse ワークスペースを選び、その **[概要]** ページの **[Synapse Studio を開く]** カードで **[開く]** を選んで、新しいブラウザー タブで Synapse Studio を開きます。ダイアログが表示されたらサインインします。
+2. Synapse ワークスペースを選び、その **[概要]** ページの **[Synapse Studio を開く]** カードで **[開く]** を選んで、新しいブラウザー タブで Synapse Studio を開きます。メッセージが表示されたらサインインします。
 3. Synapse Studio の左側にある **&rsaquo;&rsaquo;** アイコンを使用してメニューを展開します。これにより、リソースの管理とデータ分析タスクの実行に使用するさまざまなページが Synapse Studio 内に表示されます。
 4. **[管理]** ページで、 **[Apache Spark pools]** タブを選択し、**spark*xxxxxxx*** のような名前の Spark プールがワークスペース内にプロビジョニングされていることに注意してください。
 5. **[データ]** ページで **[リンク]** タブを表示して、**synapse*xxxxxxx* (Primary - datalake*xxxxxxx*)** のような名前の Azure Data Lake Storage Gen2 ストレージ アカウントへのリンクがワークスペースに含まれていることを確認します。
