@@ -69,6 +69,8 @@ lab:
     - 変換されたデータを名前が一意のフォルダーに Parquet 形式で保存します。
 10. ノートブックのツール バーで、**ノートブックを spark*xxxxxxx*** Spark プールにアタッチし、 **[&#9655; すべて実行]** ボタンを使用してノートブック内のすべてのコード セルを実行します。
 
+    > **注**: スクリプトの実行中にノートブックがアップロードされていないことがわかった場合は、GitHub [Allfiles/labs/11/notebooks](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/11/notebooks) から Spark Transform.ipynb という名前のファイルをダウンロードし、Synapse にアップロードする必要があります。
+    
     Spark セッションが開始され、コード セルが実行できるようになるまで数分かかる場合があります。
 
 11. すべてのノートブック セルが実行されたら、変換されたデータが保存されているフォルダーの名前をメモします。
