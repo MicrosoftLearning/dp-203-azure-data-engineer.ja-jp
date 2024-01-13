@@ -34,7 +34,7 @@ Azure Synapse Link for SQL を使用すると、SQL Server または Azure SQL D
     git clone https://github.com/MicrosoftLearning/dp-203-azure-data-engineer dp-203
     ```
 
-5. リポジトリが複製されたら、次のコマンドを入力してこの演習用のフォルダーに変更し、そこに含まれている **setup.ps1** スクリプトを実行します。
+5. リポジトリがクローンされたら、次のコマンドを入力してこの演習用のフォルダーに移動し、そこに含まれている **setup.ps1** スクリプトを実行します。
 
     ```
     cd dp-203/Allfiles/labs/15
