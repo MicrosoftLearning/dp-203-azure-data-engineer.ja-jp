@@ -63,9 +63,10 @@ lab:
 7. この **files** コンテナーを選択し、そこに **data** と **synapse** という名前のフォルダーが含まれていることを確認します。 synapse フォルダーは Azure Synapse によって使用され、**data** フォルダーにはこれからクエリを実行するデータ ファイルが含まれています。
 8. **data** フォルダーを開き、3 年間の売上データの .csv ファイルが含まれていることを確認します。
 9. いずれかのファイルを右クリックし、 **[プレビュー]** を選択して、そこに含まれているデータを表示します。 このファイルにはヘッダー行が含まれているため、列ヘッダーを表示するには、オプションを選択できることに注意してください。
-10. プレビューを閉じます。 次に **Spark Transform.ipynb** を [https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/06/notebooks/Spark%20Transform.ipynb](https://raw.githubusercontent.com/MicrosoftLearning/dp-203-azure-data-engineer/master/Allfiles/labs/06/notebooks/Spark%20Transform.ipynb) からダウンロードします
+10. プレビューを閉じます。 次に、[Allfiles/labs/06/notebooks](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer/tree/master/Allfiles/labs/06/notebooks) から **Spark Transform.ipynb** をダウンロードします
 
-    > **注**: ***Ctrl + A*** キー、***Ctrl + C*** キーの順に押してこのテキストをコピーし、***Ctrl + V*** を使ってメモ帳などのツールに貼り付け、ファイルを使い、ファイルの種類を***すべてのファイル***にして **Spark Transform.ipynb** という名前で保存します。
+    > **注**: ***Ctrl + A*** キー、***Ctrl + C*** キーの順に押してこのテキストをコピーし、***Ctrl + V*** を使ってメモ帳などのツールに貼り付け、ファイルを使い、ファイルの種類を***すべてのファイル***にして **Spark Transform.ipynb** という名前で保存します。 また、ファイルをダウンロードするには、クリックし、[...] を選んでダウンロードしてから、保存した場所を確認する方法もあります。
+    ![GitHub から Spark ノートブックをダウンロードする](./images/select-download-notebook.png)
 
 11. 次に、 **[開発]** ページで **[ノートブック]** を展開し、[+ インポート] オプションをクリックします
 

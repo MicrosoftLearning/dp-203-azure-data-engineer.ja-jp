@@ -73,8 +73,6 @@ Azure Synapse Analytics "ワークスペース"は、データとデータ処理
         - **sql*xxxxxxx***: リレーショナル データ ウェアハウス データベースをホストする "専用" SQL プール。**
     - **Apache Spark プール**:
         - **spark*xxxxxxx***: Scala や Python などのプログラミング言語を使用して、データ レイク内のデータをオンデマンドで探索または処理できます。
-<!---    - **Data Explorer pools**:
-        - **adx*xxxxxxx***: A Data Explorer pool that you can use to analyze data by using Kusto Query Language (KQL). --->
 
 ## パイプラインを使用してデータを取り込む
 
