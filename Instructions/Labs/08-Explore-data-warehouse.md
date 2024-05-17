@@ -32,14 +32,14 @@ Azure Synapse Analytics "ワークスペース"は、データとデータ処理
 4. PowerShell のペインで、次のコマンドを入力して、リポジトリを複製します。
 
     ```
-    rm -r dp500 -f
-    git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst dp500
+    rm -r dp203 -f
+    git clone  https://github.com/MicrosoftLearning/Dp-203-azure-data-engineer dp203
     ```
 
 5. リポジトリが複製されたら、次のコマンドを入力してこのラボ用のフォルダーに変更し、そこに含まれている **setup.ps1** スクリプトを実行します。
 
     ```
-    cd dp500/Allfiles/03
+    cd dp203/Allfiles/labs/08
     ./setup.ps1
     ```
 
