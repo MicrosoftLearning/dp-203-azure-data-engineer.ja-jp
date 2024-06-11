@@ -127,6 +127,7 @@ lab:
             - **[名前]**: Data_Warehouse
             - **[説明]**: 専用 SQL プール
             - **統合ランタイム経由で接続する**: AutoResolveIntegrationRuntime
+            - **[バージョン]**: レガシ
             - **[アカウントの選択方法]**: Azure サブスクリプションから
             - **[Azure サブスクリプション]**: Azure サブスクリプションを選択します
             - **[サーバー名]**: synapse*xxxxxxx* (Synapse ワークスペース)
