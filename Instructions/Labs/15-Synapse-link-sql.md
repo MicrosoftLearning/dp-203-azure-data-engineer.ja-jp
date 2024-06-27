@@ -117,6 +117,7 @@ Azure SQL Database 用に Azure Synapse Link を設定する前に、Azure SQL D
         - **名前**: SqlAdventureWorksLT
         - **説明**: AdventureWorksLT データベースへの接続
         - **統合ランタイム経由で接続する**: AutoResolveIntegrationRuntime
+        - **[バージョン]**: レガシ
         - **接続文字列**: 選択済み
         - **Azure サブスクリプションから**: 選択済み
         - **Azure サブスクリプション**: "使用する Azure サブスクリプションを選択します"**
