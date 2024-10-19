@@ -54,7 +54,7 @@ Azure Synapse Analytics "ワークスペース"は、データとデータ処理
 
 *Synapse Studio* は、Azure Synapse Analytics ワークスペース内のリソースを管理および操作できる Web ベースのポータルです。
 
-1. セットアップ スクリプトの実行が完了したら、Azure portal で、作成された **dp203-*xxxxxxx*** リソース グループに移動し、このリソース グループに Synapse ワークスペース、データ レイク用のストレージ アカウント、Apache Spark プール、Data Explorer プール、専用 SQL プールが含まれていることを確認します。
+1. セットアップ スクリプトの実行が完了したら、Azure portal で、作成された **dp203-*xxxxxxx*** リソース グループに移動し、このリソース グループに Synapse ワークスペース、データ レイク用のストレージ アカウント、Apache Spark プール、専用 SQL プールが含まれていることを確認します。
 2. Synapse ワークスペースを選択し、 **[概要]** ページの **[Synapse Studio を開く]** カードで、 **[開く]** を選択し、新しいブラウザー タブで Synapse Studio を開きます。Synapse Studio は、Synapse Analytics ワークスペースの操作に使用できる Web ベースのインターフェイスです。
 3. Synapse Studio の左側で、**&rsaquo;&rsaquo;** アイコンを使用してメニューを展開します。次に示すように、リソースの管理とデータ分析タスクの実行に使用するさまざまなページが Synapse Studio 内に表示されます。
 
@@ -433,7 +433,7 @@ Azure Synapse Analytics の探索が終了したので、不要な Azure コス�
 
 1. Synapse Studio ブラウザー タブを閉じ、Azure portal に戻ります。
 2. Azure portal の **[ホーム]** ページで、**[リソース グループ]** を選択します。
-3. Synapse Analytics ワークスペースの **dp203-*xxxxxxx*** リソース グループ (管理対象リソース グループでななく) を選択し、そこに Synapse ワークスペース、ストレージ アカウント、ワークスペースの SQL プール、Data Explorer プール、Spark プールが含まれていることを確認します。
+3. Synapse Analytics ワークスペースに対して **dp203-*xxxxxxx*** リソース グループ (管理対象リソース グループ以外) を選択し、そこに Synapse ワークスペース、ストレージ アカウント、SQL プール、ワークスペースの Spark プールが含まれていることを確認します。
 4. リソース グループの **[概要]** ページの上部で、**[リソース グループの削除]** を選択します。
 5. リソース グループ名として「**dp203-*xxxxxxx***」と入力し、これが削除対象であることを確認したら、 **[削除]** を選択します。
 
